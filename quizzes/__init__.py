@@ -164,8 +164,8 @@ class Question:
             context = "context: " + data + " keyword: " + key
             source_tokenizer = self.tokenizer.encode_plus(
                 context, max_length=512, pad_to_max_length=True, return_tensors="pt")
-            outs = self.model.generate(input_ids=source_tokenizer['input_ids'].cuda(
-            ), attention_mask=source_tokenizer['attention_mask'].cuda(), max_length=50)
+            outs = self.model.generate(input_ids=source_tokenizer['input_ids'].to(
+                self.device), attention_mask=source_tokenizer['attention_mask'].to(self.device), max_length=50)
             dec = [self.tokenizer.decode(ids) for ids in outs][0]
             st = dec.replace("<pad> ", "")
             st = st.replace("</s>", "")
@@ -189,8 +189,8 @@ class Question:
             context = "context: " + data + " keyword: " + list2[n]
             source_tokenizer = self.tokenizer.encode_plus(
                 context, max_length=512, pad_to_max_length=True, return_tensors="pt")
-            outs = self.model.generate(input_ids=source_tokenizer['input_ids'].cuda(
-            ), attention_mask=source_tokenizer['attention_mask'].cuda(), max_length=50)
+            outs = self.model.generate(input_ids=source_tokenizer['input_ids'].to(
+                self.device), attention_mask=source_tokenizer['attention_mask'].to(self.device), max_length=50)
             dec = [self.tokenizer.decode(ids) for ids in outs][0]
             st = dec.replace("<pad> ", "")
             st = st.replace("</s>", "")
