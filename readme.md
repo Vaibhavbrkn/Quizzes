@@ -6,7 +6,7 @@
 
 ## 🚀 Quickstart
 
-> First download the [sense2vec weight](https://github.com/explosion/sense2vec/releases/download/v1.0.0/s2v_reddit_2015_md.tar.gz). Unzip it and place it into a path.
+> First download the [sense2vec weight](https://drive.google.com/drive/folders/14TCl8EUra0a7Xl_29hr7sgKOWrMGpyV1?usp=sharing). Unzip it and place it into a path.
 
 ```bash
 pip install quizzes
