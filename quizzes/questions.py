@@ -224,12 +224,17 @@ class Question:
     def generate(self, text, min_mcq_question=5, max_mcq_question=8, min_fill_ques=2, max_fill_ques=4):
         """
            Args:
-            text (:obj:`str`, `required`):
+            text : (obj:`str`, `required`):
                 Text to generate questions
-            min_question (:obj:`int`, `optional`, defaults to 5):
-                Minimum number of question to generate.
-            max_question (:obj:`int`, `optional`, defaults to 8):
-                Maximum number of question to generate.
+            min_mcq_question : (obj:`int`, `optional`, defaults to 5):
+                Minimum number of MCQ question to generate.
+            max_mcq_question : (obj:`int`, `optional`, defaults to 8):
+                Maximum number of MCQ question to generate.
+            min_fill_ques : (obj:`int`, `optional`, defaults to 2):
+                Minimum number of Fill in the blank question to generate.
+            max_fill_ques : (obj:`int`, `optional`, defaults to 4):
+                Maximum number of Fill in the blank question to generate.
+            
         """
 
         total_min = min_mcq_question + min_fill_ques
