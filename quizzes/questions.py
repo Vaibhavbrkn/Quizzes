@@ -13,7 +13,7 @@ import transformers
 import torch
 from sense2vec import Sense2Vec
 
-from fill import Fill
+from quizzes.fill import Fill
 import math
 
 
