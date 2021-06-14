@@ -2,3 +2,4 @@ dist/
 quizzes.egg-info/
 quizzes/__pycache__
 quizzes/.vscode
+build/
