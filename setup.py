@@ -1,6 +1,6 @@
 from setuptools import setup
 setup(name="quizzes",
-      version="0.5",
+      version="0.6",
       description="package to generate MCQ questions with options and answer",
       author="Vaibhav Agrawal",
       packages=["quizzes"],

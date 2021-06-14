@@ -9,7 +9,8 @@
 > First download the [sense2vec weight](https://drive.google.com/drive/folders/14TCl8EUra0a7Xl_29hr7sgKOWrMGpyV1?usp=sharing). Unzip it and place it into a path.
 
 ```bash
-pip install quizzes
+pip install git+https://github.com/Vaibhavbrkn/Quizzes.git
+pip install git+https://github.com/Vaibhavbrkn/pke.git
 ```
 
 ```python
