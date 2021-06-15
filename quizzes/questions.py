@@ -256,6 +256,11 @@ class Question:
 
         """
 
+        assert min_mcq_question > 0, "minimum number of mcq question should be greater then 0"
+        assert min_fill_ques > 0, "minimum number of fill question should be greater then 0"
+        assert min_mcq_question <= max_mcq_question, "maximum number of mcq question should be greater then minimum number of mcq question"
+        assert min_fill_ques <= max_fill_ques, "maximum number of fill question should be greater then minimum number of fill question"
+
         total_min = min_mcq_question + min_fill_ques
         total_max = max_mcq_question + max_fill_ques
         question, choice, fill_ques, fill_key = self.__build_questions(
