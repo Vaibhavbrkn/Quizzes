@@ -17,7 +17,7 @@ pip install git+https://github.com/Vaibhavbrkn/pke.git
 from quizzes import Question
 
 Q  = Question("path of sense2vec weight")
-output = Q.generate("your passage" , min_question = 5, max_question = 8, min_fill_ques = 2, max_fill_ques=4)
+output = Q.generate("your passage" , min_mcq_question=5, max_mcq_question=8, min_fill_ques = 2, max_fill_ques=4)
 """
 Output:
   {
