@@ -223,7 +223,7 @@ class Question:
 
     def generate(self, text, min_mcq_question=5, max_mcq_question=8, min_fill_ques=2, max_fill_ques=4):
         """
-           Args:
+        Args:
             text : (obj:`str`, `required`):
                 Text to generate questions
             min_mcq_question : (obj:`int`, `optional`, defaults to 5):
@@ -234,7 +234,26 @@ class Question:
                 Minimum number of Fill in the blank question to generate.
             max_fill_ques : (obj:`int`, `optional`, defaults to 4):
                 Maximum number of Fill in the blank question to generate.
-            
+
+        Output:
+            {
+                "mcq"[
+                    {
+                        "question":".....",
+                        "answer":"...",
+                        "choice":[]
+                    }
+                    ...
+                ],
+                "fill":[
+                    {
+                        "question"".....",
+                        "answer":"..."
+                    }
+                    ...
+                ]
+            }
+
         """
 
         total_min = min_mcq_question + min_fill_ques
@@ -245,4 +264,26 @@ class Question:
         fill_question, fill_ans = Fill.generate(
             text, min_fill_ques, max_fill_ques, fill_ques, fill_key)
 
-        return question, choice, fill_question, fill_ans
+        mcq = []
+        for i in range(len(question)):
+            dic = {}
+            dic['question'] = question[i]
+            dic['answer'] = choice[i][0]
+            random.shuffle(choice[i])
+            dic['choice'] = choice[i]
+            mcq.append(dic)
+
+        fill = []
+
+        for i in range(len(fill_question)):
+            dic = {}
+            dic['question'] = fill_question[i]
+            dic['answer'] = fill_ans[i]
+            fill.append(dic)
+
+        answer = {
+            "mcq": mcq,
+            "fill": fill
+        }
+
+        return answer
